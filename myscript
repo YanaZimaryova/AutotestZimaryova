@@ -1,0 +1,4 @@
+#!/bin/bash
+curl "http://www.omdbapi.com/?apikey=BanMePlz&t=Titanic"
+
+
