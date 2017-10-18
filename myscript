@@ -1,4 +1,2 @@
 #!/bin/bash
-curl "http://www.omdbapi.com/?apikey=BanMePlz&t=Titanic"
-
-
+curl "http://www.omdbapi.com/?apikey=BanMePlz&t=Titanic" | cut -d ',' -f 20 | cut -d '"' -f 4
