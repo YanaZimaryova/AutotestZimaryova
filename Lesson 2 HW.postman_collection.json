@@ -1,0 +1,126 @@
+{
+	"info": {
+		"name": "Lesson 2 HW",
+		"_postman_id": "447e7e3c-ffc8-adba-1d5f-a1c99f213a23",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"request1\"] = responseBody;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-app-id",
+						"value": "{{x-app-id}}"
+					},
+					{
+						"key": "x-app-key",
+						"value": "{{x-app-key}}"
+					},
+					{
+						"key": "x-remote-user-id",
+						"value": "{{x-remote-user-id}}"
+					},
+					{
+						"key": "default_meal",
+						"value": "{{default_meal}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\"{{default_meal}}\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/track-api/v2/natural/nutrients",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"track-api",
+						"v2",
+						"natural",
+						"nutrients"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Request2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"request2\"] = responseBody;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-app-id",
+						"value": "{{x-app-id}}"
+					},
+					{
+						"key": "x-app-key",
+						"value": "{{x-app-key}}"
+					},
+					{
+						"key": "x-remote-user-id",
+						"value": "{{x-remote-user-id}}"
+					},
+					{
+						"key": "default_meal",
+						"value": "{{default_meal}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"query\":\"for breakfast i ate 2 eggs, bacon, and french toast\",\r\n \"timezone\": \"US/Eastern\"\r\n}"
+				},
+				"url": {
+					"raw": "{{tracking_url}}/v2/search/instant?query={{default_meal}}",
+					"host": [
+						"{{tracking_url}}"
+					],
+					"path": [
+						"v2",
+						"search",
+						"instant"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "{{default_meal}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
